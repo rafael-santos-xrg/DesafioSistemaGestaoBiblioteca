@@ -5,7 +5,7 @@ namespace DesafioSistemaGestaoBiblioteca.Repositories
 {
     internal class LivroRepository : ILivroRepository
     {
-        private List<Livro> _livroList = new();
+        private List<Livro> _livroList = [];
         public void Adicionar(Livro livro)
         {
             Guarda.RegrasList.ContraItemsIguais(_livroList, livro, livro.Titulo);
@@ -25,13 +25,13 @@ namespace DesafioSistemaGestaoBiblioteca.Repositories
             _livroList.Remove(livro);
         }
 
-        public IEnumerable<Livro> BuscaPorAutor(string autor)
+        public IList<Livro> BuscaPorAutor(string autor)
         {
             var livrosDoAutor =_livroList.FindAll(l => l.Autor == autor);
             return livrosDoAutor;
         }
 
-        public IEnumerable<Livro> BuscaPorEditora(string editora)
+        public IList<Livro> BuscaPorEditora(string editora)
         {
             var livrosDaEditora = _livroList.FindAll(l => l.Editora == editora);
             return livrosDaEditora;
@@ -49,7 +49,7 @@ namespace DesafioSistemaGestaoBiblioteca.Repositories
 
         public Livro BuscarPorId(Guid itemId)
         {
-            var livroAlvo = _livroList.Find(l => l.IdItem.Equals(itemId));
+            var livroAlvo = _livroList.FirstOrDefault(l => l.IdItem.Equals(itemId));
             if (livroAlvo == null)
             {
                 throw new ArgumentException($"O livro especificado não existe", itemId.ToString());
@@ -58,7 +58,7 @@ namespace DesafioSistemaGestaoBiblioteca.Repositories
 
         }
 
-        public IEnumerable<Livro> BuscarTodos()
+        public IList<Livro> BuscarTodos()
         {
             return _livroList;
         }

@@ -5,8 +5,8 @@ namespace DesafioSistemaGestaoBiblioteca.Repositories
     internal interface ILivroRepository : IItemBibliotecaRepository<Livro>
     {
         Livro BuscaPorIsbn(Isbn isbn);
-        IEnumerable<Livro> BuscaPorAutor(string autor);
-        IEnumerable<Livro> BuscaPorEditora(string editora);
+        IList<Livro> BuscaPorAutor(string autor);
+        IList<Livro> BuscaPorEditora(string editora);
 
     }
 }
