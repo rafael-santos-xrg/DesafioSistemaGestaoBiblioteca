@@ -2,6 +2,17 @@ namespace DesafioSistemaGestaoBiblioteca.Utilities;
 
 public class Guarda
 {
+    public class RegrasGeral
+    {
+        public static void ContraNulos<T>(T item, string nomeItem)
+        {
+            if (item == null)
+            {
+                throw new ArgumentException($"O item {nomeItem} não pode ser nulo.", nomeItem);
+            }
+        }
+    }
+
     public class RegrasString
     {
         public static void ContraParametrosNulosOuVazios(string valor, string nomeParam)
@@ -25,13 +36,15 @@ public class Guarda
                 throw new ArgumentException($"{nomeParam} deve ser um número positivo.", nomeParam);
         }
     }
+
     public class RegrasList
     {
-        public static void ContraItemsIguais<T>(List<T> itemList,T item, string nomeItem)
+        public static void ContraItemsIguais<T>(List<T> itemList, T item, string nomeItem)
         {
             if (itemList.Contains(item))
                 throw new ArgumentException($"O item {nomeItem} já existe na lista", nomeItem);
         }
+
         public static void ContraItemsNaoIguais<T>(List<T> itemList, T item, string nomeItem)
         {
             if (!itemList.Contains(item))
