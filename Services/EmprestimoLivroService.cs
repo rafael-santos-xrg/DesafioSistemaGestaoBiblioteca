@@ -2,10 +2,11 @@
 
 namespace DesafioSistemaGestaoBiblioteca.Services
 {
-    internal class EmprestimoLivroService : IEmprestimoItemService
+    internal class EmprestimoLivroService : IEmprestimoItemService<Isbn>
     {
-        public Emprestimo Empresta(Guid idLivro, Visitante visitante)
+        public Emprestimo<Livro> Empresta(Isbn isbn, Visitante visitante)
         {
+            
             throw new NotImplementedException();
         }
 
