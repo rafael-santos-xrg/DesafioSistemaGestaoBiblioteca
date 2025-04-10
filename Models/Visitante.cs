@@ -2,18 +2,18 @@ using DesafioSistemaGestaoBiblioteca.Utilities;
 
 namespace DesafioSistemaGestaoBiblioteca.Models;
 
-public abstract class Visitante
+public class Visitante
 {
     public Guid IdVisitante { get; set; }
     public string Nome { get; set; }
-    public string Cpf { get; set; }
+    public Cpf Cpf { get; set; }
 
-    protected Visitante(string nomeVisitante, string cpfVisitante)
+    public Visitante(string nomeVisitante, string cpfVisitante)
     {
         Guarda.RegrasString.ContraParametrosNulosOuVazios(nomeVisitante, nameof(nomeVisitante));
 
         Nome = nomeVisitante;
-        Cpf = cpfVisitante;
+        Cpf = new Cpf(cpfVisitante);
         IdVisitante = Guid.NewGuid();
     }
 }
