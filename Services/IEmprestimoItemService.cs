@@ -2,9 +2,9 @@
 
 namespace DesafioSistemaGestaoBiblioteca.Services
 {
-    internal interface IEmprestimoItemService
+    internal interface IEmprestimoItemService<in T>
     {
-        Emprestimo Empresta(Guid idItem, Visitante visitante);
+        Emprestimo<Livro> Empresta(T idItem, Visitante visitante);
 
         void Devolve(Guid idEmprestimo);
     }
