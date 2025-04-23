@@ -38,14 +38,11 @@ namespace DesafioSistemaGestaoBiblioteca.Repositories
             return livrosDaEditora;
         }
 
-        public Livro BuscaPorIsbn(Isbn isbn)
+        public Livro? TentaBuscarPorIsbn(Isbn isbn)
         {
-            var livroAlvo = _livroList.Find(l => l.Isbn.Equals(isbn));
-            if (livroAlvo == null)
-            {
-                throw new ArgumentException("Não existe nenhum livro com essa numeração!", isbn.ToString());
-            }
-            return livroAlvo;
+            return _livroList.FirstOrDefault(l => l.Isbn.Equals(isbn));
+        }
+
         public Livro? TentaBuscarPorId(Guid itemId)
         {
             return _livroList.FirstOrDefault(l => l.IdItem.Equals(itemId));
