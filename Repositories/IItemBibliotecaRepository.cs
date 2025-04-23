@@ -2,13 +2,13 @@
 
 namespace DesafioSistemaGestaoBiblioteca.Repositories
 {
-    internal interface IItemBibliotecaRepository<T> where T : ItemBiblioteca
+    public interface IItemBibliotecaRepository<T> where T : ItemBiblioteca
     {
         void Adicionar(T itemBiblioteca);
         void Atualizar(T itemBiblioteca);
         void Remover(T itemBiblioteca);
         IList<T> BuscarTodos();
-        T BuscarPorId(Guid itemId);
-
+        T? TentaBuscarPorId(Guid itemId);
+        ItemBiblioteca? TentaBuscarPorCódigo(string codigo);
     }
 }
