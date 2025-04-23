@@ -1,3 +1,5 @@
+using DesafioSistemaGestaoBiblioteca.Utilities;
+
 namespace DesafioSistemaGestaoBiblioteca.Models;
 
 public class Emprestimo<T> where T : ItemBiblioteca
@@ -10,6 +12,9 @@ public class Emprestimo<T> where T : ItemBiblioteca
 
     public Emprestimo(Visitante visitante, T item)
     {
+        Guarda.RegrasGeral.ContraNulos(visitante, nameof(visitante));
+        Guarda.RegrasGeral.ContraNulos(item, nameof(item));
+        
         IdEmprestimo = Guid.NewGuid();
         ItemBiblioteca = item;
         VisitanteInfo = visitante;
