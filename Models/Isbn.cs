@@ -6,9 +6,9 @@ public class Isbn
 
     public Isbn(string isbnCode)
     {
-        if (isbnCode == null) throw new Exception("Código ISBN não pode ser nulo");
-        if (isbnCode.Length < 13) throw new Exception("Código ISBN incompleto");
-        if (isbnCode.Length > 13) throw new Exception("Código ISBN inválido");
+        if (isbnCode == null) throw new ArgumentException("Código ISBN não pode ser nulo");
+        if (isbnCode.Length < 13) throw new ArgumentException("Código ISBN incompleto");
+        if (isbnCode.Length > 13) throw new ArgumentException("Código ISBN inválido");
 
         IsbnCode = isbnCode;
     }
