@@ -2,7 +2,7 @@ using DesafioSistemaGestaoBiblioteca.Utilities;
 
 namespace DesafioSistemaGestaoBiblioteca.Models;
 
-public class Emprestimo<T> where T : ItemBiblioteca
+public class Emprestimo<T> where T : ItemBibliotecaEmprestavel
 {
     public Guid IdEmprestimo { get; }
     private DateTime DataEmprestimo { get; }

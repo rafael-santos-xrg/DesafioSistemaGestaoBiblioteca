@@ -8,7 +8,4 @@ public abstract class ItemBiblioteca
     public string Editora { get; set; }
     public int AnoLancamento { get; set; }
     public int Edicao { get; set; }
-    public TimeSpan PrazoEmprestimo { get; set; }
-
-    protected abstract TimeSpan CalculaPrazoEmprestimo();
 }

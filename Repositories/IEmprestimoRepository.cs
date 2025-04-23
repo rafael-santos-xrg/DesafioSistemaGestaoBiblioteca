@@ -2,7 +2,7 @@
 
 namespace DesafioSistemaGestaoBiblioteca.Repositories
 {
-    internal interface IEmprestimoRepository<T> where T : ItemBiblioteca
+    internal interface IEmprestimoRepository<T> where T : ItemBibliotecaEmprestavel
 
     {
     void Adicionar(Emprestimo<T> emprestimo);

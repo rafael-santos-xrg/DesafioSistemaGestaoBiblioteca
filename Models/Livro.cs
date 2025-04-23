@@ -2,7 +2,7 @@ using DesafioSistemaGestaoBiblioteca.Utilities;
 
 namespace DesafioSistemaGestaoBiblioteca.Models;
 
-public class Livro : ItemBiblioteca
+public class Livro : ItemBibliotecaEmprestavel
 {
     public Isbn Isbn { get; }
     public int Estoque { get; set; }

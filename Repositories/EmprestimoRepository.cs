@@ -4,7 +4,7 @@ using DesafioSistemaGestaoBiblioteca.Utilities;
 
 namespace DesafioSistemaGestaoBiblioteca.Repositories
 {
-    internal class EmprestimoRepository<T> : IEmprestimoRepository<T>, IEnumerable<Emprestimo<T>> where T : ItemBiblioteca
+    internal class EmprestimoRepository<T> : IEmprestimoRepository<T>, IEnumerable<Emprestimo<T>> where T : ItemBibliotecaEmprestavel
     {
     private List<Emprestimo<T>> _emprestimoList = [];
 
