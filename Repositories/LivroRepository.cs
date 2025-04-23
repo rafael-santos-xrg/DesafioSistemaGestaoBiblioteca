@@ -28,7 +28,7 @@ namespace DesafioSistemaGestaoBiblioteca.Repositories
 
         public IList<Livro> BuscaPorAutor(string autor)
         {
-            var livrosDoAutor =_livroList.FindAll(l => l.Autor == autor);
+            var livrosDoAutor = _livroList.FindAll(l => l.Autor == autor);
             return livrosDoAutor;
         }
 
@@ -66,6 +66,5 @@ namespace DesafioSistemaGestaoBiblioteca.Repositories
         {
             return _livroList;
         }
-
     }
 }
