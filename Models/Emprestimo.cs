@@ -5,10 +5,10 @@ namespace DesafioSistemaGestaoBiblioteca.Models;
 public class Emprestimo<T> where T : ItemBiblioteca
 {
     public Guid IdEmprestimo { get; }
-    public DateTime DataEmprestimo { get; set; }
-    public DateTime DataMaximaDevolucao { get; set; }
-    public Visitante VisitanteInfo { get; set; }
-    public T ItemBiblioteca { get; set; }
+    private DateTime DataEmprestimo { get; }
+    public DateTime DataMaximaDevolucao { get; }
+    public Visitante VisitanteInfo { get; }
+    private T ItemBiblioteca { get; }
 
     public Emprestimo(Visitante visitante, T item)
     {
