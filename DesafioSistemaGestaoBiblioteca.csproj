@@ -9,6 +9,7 @@
 
     <ItemGroup>
       <Compile Remove="Models\ICalculaPrazoEmprestimo.cs" />
+      <Compile Remove="Services\EmprestimoLivroService.cs" />
     </ItemGroup>
 
 </Project>
